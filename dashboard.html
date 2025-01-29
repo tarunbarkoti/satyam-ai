@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plagiarism & News Checker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global styles */
+        * {
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Card styling for form */
+        .form-card {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0 20px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+        }
+
+        /* Styling for header, footer, etc. */
+        header,
+        footer {
+            padding: 20px;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        /* Fixed header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: white;
+            z-index: 50;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Body padding to avoid content hidden under fixed header */
+        body {
+            padding-top: 80px;
+        }
+
+        /* Services section */
+        .services-section {
+            min-height: 100vh;
+            padding-top: 100px;
+            background-color: #f7fafc;
+        }
+
+        .services-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 30px;
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #2b6cb0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Horizontal layout */
+        .horizontal-layout {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- Header Section -->
+    <header>
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold text-blue-600">SATYAM</a>
+                <div class="flex items-center space-x-6">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600">Services</a>
+                    <!-- <a href="#pricing" class="text-gray-700 hover:text-blue-600">Pricing</a>
+                    <a href="#account" class="text-gray-700 hover:text-blue-600">Account</a> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container mx-auto px-6 py-16">
+                <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">Upload Files for Verification</h2>
+
+                <!-- Horizontal Layout for the Cards -->
+                <div class="horizontal-layout">
+
+                    <!-- Title Input Card -->
+                    <div class="form-card">
+                        <h3 class="text-xl font-bold text-gray-700 mb-4">Enter Your News URL</h3>
+                        <form id="title-form">
+                            <div class="mb-4">
+                                <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Title</label>
+                                <input type="text" id="title" name="title" class="w-full p-3 rounded-lg text-gray-700"
+                                    placeholder="Enter a title" required />
+                            </div>
+
+                            <!-- Submit Button for Title -->
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                                Submit Your News!
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- File Upload Card -->
+                    <div class="form-card">
+                        <h3 class="text-xl font-bold text-gray-700 mb-4">Upload a File</h3>
+                        <form id="file-upload-form" action="#" method="POST" enctype="multipart/form-data">
+                            <!-- File Upload Label and Input -->
+                            <div class="mb-4">
+                                <label for="file" class="block text-sm font-medium text-gray-700 mb-2">Upload File(Only Png, Jpeg, Pdf, Word)</label>
+                                <input type="file" id="file" name="file" class="w-full p-3 rounded-lg text-gray-700"
+                                    accept=".png, .jpeg, .jpg, .pdf, .csv, .doc, .docx" required />
+                            </div>
+
+                            <!-- Submit Button for File Upload -->
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                                Submit File
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p class="text-gray-200 text-sm">© 2025 SATYAM. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const titleForm = document.getElementById('title-form');
+            const fileForm = document.getElementById('file-upload-form');
+            
+            // Handle Title Form submission
+            titleForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const title = document.getElementById('title').value;
+                
+                if (title) {
+                    alert(`Title submitted: ${title}`);
+                } else {
+                    alert('Please enter a title!');
+                }
+            });
+
+            // Handle File Upload Form submission
+            fileForm.addEventListener('submit', (e) => {
+                e.preventDefault();  // Prevent form submission to show custom message
+                const file = document.getElementById('file').files[0];
+
+                if (file) {
+                    alert(`File uploaded successfully!\nFile Name: ${file.name}`);
+                } else {
+                    alert('Please select a file!');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
