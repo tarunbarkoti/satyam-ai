@@ -41,7 +41,7 @@ Welcome to Satyam AI, a smart, AI-powered fake news detection system built durin
 
 1.  **Clone the Repo**
     ```bash
-    git clone https://github.com/your-username/satyam-ai.git
+    git clone https://github.com/tarunbarkoti/satyam-ai.git
     cd satyam-ai
     ```
 
@@ -71,7 +71,7 @@ Welcome to Satyam AI, a smart, AI-powered fake news detection system built durin
 
 **Tarun Barkoti**
 
-- [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile/)
+- [LinkedIn](https://www.linkedin.com/in/tarunbarkoti/)
 
 ---
 
