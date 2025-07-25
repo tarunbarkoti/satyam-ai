@@ -71,8 +71,6 @@ Welcome to Satyam AI, a smart, AI-powered fake news detection system built durin
 
 **Tarun Barkoti**
 
-- [LinkedIn](https://www.linkedin.com/in/tarunbarkoti/)
-
 ---
 
 ## License
